@@ -1,0 +1,11 @@
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/bin/Debug/net8.0/Aspire.Core.deps.json
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/bin/Debug/net8.0/Aspire.Core.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/bin/Debug/net8.0/Aspire.Core.pdb
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.AssemblyInfoInputs.cache
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.AssemblyInfo.cs
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.csproj.CoreCompileInputs.cache
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/refint/Aspire.Core.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/Aspire.Core.pdb
+/Users/lloydnicholson/RiderProjects/AspireTesting/Aspire.Core/obj/Debug/net8.0/ref/Aspire.Core.dll

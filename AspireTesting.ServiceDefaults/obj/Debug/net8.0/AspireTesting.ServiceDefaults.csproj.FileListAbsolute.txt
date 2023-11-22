@@ -1,0 +1,12 @@
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/bin/Debug/net8.0/AspireTesting.ServiceDefaults.deps.json
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/bin/Debug/net8.0/AspireTesting.ServiceDefaults.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/bin/Debug/net8.0/AspireTesting.ServiceDefaults.pdb
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.csproj.AssemblyReference.cache
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.AssemblyInfoInputs.cache
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.AssemblyInfo.cs
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.csproj.CoreCompileInputs.cache
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/refint/AspireTesting.ServiceDefaults.dll
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/AspireTesting.ServiceDefaults.pdb
+/Users/lloydnicholson/RiderProjects/AspireTesting/AspireTesting.ServiceDefaults/obj/Debug/net8.0/ref/AspireTesting.ServiceDefaults.dll
