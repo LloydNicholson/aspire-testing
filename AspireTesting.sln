@@ -2,15 +2,17 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.0.0
 MinimumVisualStudioVersion = 17.8.0.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireTesting.AppHost", "AspireTesting.AppHost\AspireTesting.AppHost.csproj", "{4E4249DD-30C7-4D32-89AE-CE6FF8A21418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireTesting.AppHost", "src\AspireTesting.AppHost\AspireTesting.AppHost.csproj", "{4E4249DD-30C7-4D32-89AE-CE6FF8A21418}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireTesting.ServiceDefaults", "AspireTesting.ServiceDefaults\AspireTesting.ServiceDefaults.csproj", "{B0526512-D24B-4BE7-AF22-D7C7B9F36B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireTesting.ServiceDefaults", "src\AspireTesting.ServiceDefaults\AspireTesting.ServiceDefaults.csproj", "{B0526512-D24B-4BE7-AF22-D7C7B9F36B55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.WebApi", "Aspire.WebApi\Aspire.WebApi.csproj", "{06D16E99-73EE-469C-9EAF-48833D7764C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.WebApi", "src\Aspire.WebApi\Aspire.WebApi.csproj", "{06D16E99-73EE-469C-9EAF-48833D7764C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.BlazorUI", "Aspire.BlazorUI\Aspire.BlazorUI.csproj", "{1A0FAE72-DB03-4029-B87C-122A32986BFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.BlazorUI", "src\Aspire.BlazorUI\Aspire.BlazorUI.csproj", "{1A0FAE72-DB03-4029-B87C-122A32986BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.Core", "Aspire.Core\Aspire.Core.csproj", "{38EA2C78-EE52-4303-9473-AFB06B988E60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.Core", "src\Aspire.Core\Aspire.Core.csproj", "{38EA2C78-EE52-4303-9473-AFB06B988E60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,5 +46,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B83CDAD-DA26-43B1-A64C-0124C95155C8}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A0FAE72-DB03-4029-B87C-122A32986BFD} = {A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}
+		{38EA2C78-EE52-4303-9473-AFB06B988E60} = {A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}
+		{06D16E99-73EE-469C-9EAF-48833D7764C1} = {A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}
+		{4E4249DD-30C7-4D32-89AE-CE6FF8A21418} = {A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}
+		{B0526512-D24B-4BE7-AF22-D7C7B9F36B55} = {A7C6D9FD-DF72-4EA8-A4B5-6D400D632376}
 	EndGlobalSection
 EndGlobal
