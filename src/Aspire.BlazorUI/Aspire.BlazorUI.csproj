@@ -5,13 +5,13 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
-    <ItemGroup>
-        <ProjectReference Include=".\Aspire.Core\Aspire.Core.csproj"/>
-        <ProjectReference Include=".\AspireTesting.ServiceDefaults\AspireTesting.ServiceDefaults.csproj"/>
-    </ItemGroup>
-
+    
     <ItemGroup>
       <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="8.0.0-preview.1.23557.2" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Aspire.Core\Aspire.Core.csproj" />
+      <ProjectReference Include="..\AspireTesting.ServiceDefaults\AspireTesting.ServiceDefaults.csproj" />
     </ItemGroup>
 </Project>

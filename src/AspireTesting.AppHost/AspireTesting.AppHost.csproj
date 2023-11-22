@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include=".\Aspire.BlazorUI\Aspire.BlazorUI.csproj" />
-    <ProjectReference Include=".\Aspire.WebApi\Aspire.WebApi.csproj" />
+    <ProjectReference Include="..\Aspire.BlazorUI\Aspire.BlazorUI.csproj" />
+    <ProjectReference Include="..\Aspire.WebApi\Aspire.WebApi.csproj" />
   </ItemGroup>
-
+  
 </Project>
