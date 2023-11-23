@@ -2,14 +2,16 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedisContainer("rediscache");
 var sqlDb = builder
-    .AddSqlServerContainer("sqlserver", password: "Strong_!_Password1", 1433)
-    .AddDatabase("testdb")
-    .WithVolumeMount("sqldata", "/var/opt/mssql", VolumeMountType.Named);
+    .AddSqlServerContainer("sql", password: "Strong_!_Password1", 1434)
+    .WithVolumeMount("sqldata", "/var/opt/mssql", VolumeMountType.Named)
+    .AddDatabase("testdb");
 
-var azuriteEmulator = builder.AddAzureStorage("azurite")
+var azuriteEmulator = builder
+    .AddAzureStorage("azurite")
     .UseEmulator(blobPort: 1234, queuePort: 1235, tablePort: 1236);
+
 var blobs = azuriteEmulator.AddBlobs("azure-blobs");
-var tables = azuriteEmulator.AddTables("azure-tables");
+var tables = azuriteEmulator.AddTables("tables");
 var queues = azuriteEmulator.AddQueues("azure-queues");
 
 var backend = builder.AddProject<Projects.Aspire_WebApi>("backend")
@@ -20,6 +22,7 @@ var backend = builder.AddProject<Projects.Aspire_WebApi>("backend")
 
 builder.AddProject<Projects.Aspire_BlazorUI>("frontend")
     .WithReference(backend)
-    .WithReference(cache);
+    .WithReference(cache)
+    .WithReference(tables);
 
 builder.Build().Run();

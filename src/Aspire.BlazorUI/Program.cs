@@ -11,7 +11,10 @@ builder.Services.AddHttpClient<WeatherService>(p =>
     p.BaseAddress = new Uri("http://backend");
 });
 
+builder.AddAzureTableService(connectionName: "tables");
+
 builder.AddRedisOutputCache("rediscache");
+
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 

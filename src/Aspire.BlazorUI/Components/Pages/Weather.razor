@@ -1,10 +1,14 @@
 @page "/weather"
 @using Aspire.Core
 @using Aspire.BlazorUI.Services
+@using global::Azure
+@using global::Azure.Data.Tables
 @using Microsoft.AspNetCore.OutputCaching
 @attribute [StreamRendering]
 @attribute [OutputCache(Duration = 5)]
 @inject WeatherService WeatherService
+@inject TableServiceClient TableServiceClient
+@rendermode InteractiveServer
 
 <PageTitle>Weather</PageTitle>
 
@@ -43,12 +47,42 @@ else
     </table>
 }
 
+<button @onclick="AddToTableStorage">Do it bro</button>
+
 @code {
     private IList<WeatherForecast>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await WeatherService.GetWeatherForecasts();
+    }
+
+    private async Task AddToTableStorage()
+    {
+        const string tableName = "testtable";
+        await TableServiceClient.CreateTableIfNotExistsAsync(tableName);
+        var client = TableServiceClient.GetTableClient(tableName);
+        await client.UpsertEntityAsync(
+            new TestTable
+            {
+                PartitionKey = Guid.NewGuid().ToString(),
+                RowKey = string.Empty,
+                Message = "wow dude",
+            },
+            TableUpdateMode.Replace);
+    }
+
+    private class TestTable : ITableEntity
+    {
+        public string PartitionKey { get; set; } = null!;
+
+        public string RowKey { get; set; } = null!;
+
+        public DateTimeOffset? Timestamp { get; set; }
+
+        public ETag ETag { get; set; }
+
+        public string Message { get; set; } = null!;
     }
 
 }

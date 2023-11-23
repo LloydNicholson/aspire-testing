@@ -6,7 +6,26 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddSqlServerDbContext<TestDbContext>("testdb");
+builder.AddAzureTableService("tables");
+
+builder.AddSqlServerDbContext<TestDbContext>(
+    connectionName: "testdb",
+    configureSettings: p =>
+    {
+        p.ConnectionString = builder.Configuration.GetConnectionString("sql");
+        p.DbContextPooling = true;
+        p.Metrics = true;
+        p.Tracing = true;
+    },
+    configureDbContextOptions: p =>
+    {
+        p.UseSqlServer(options =>
+        {
+            options.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+        });
+
+        p.EnableDetailedErrors();
+    });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,22 +41,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
 app.MapGet("/weatherforecast",
-        () =>
-        {
-            var forecast = Enumerable.Range(1, 5).Select(index =>
-                    new WeatherForecast(
-                        Date: DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                        TemperatureC: Random.Shared.Next(-20, 55),
-                        Summary: summaries[Random.Shared.Next(summaries.Length)]))
-                .ToArray();
-            return forecast;
-        })
+        (TestDbContext dbContext) =>
+            dbContext.Set<WeatherForecast>().ToList())
     .WithName("GetWeatherForecast")
     .WithOpenApi();
 
