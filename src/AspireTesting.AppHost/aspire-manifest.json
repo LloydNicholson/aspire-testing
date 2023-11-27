@@ -1,0 +1,77 @@
+{
+  "resources": {
+    "rediscache": {
+      "type": "redis.v0"
+    },
+    "sql": {
+      "type": "sqlserver.server.v1"
+    },
+    "testdb": {
+      "type": "sqlserver.database.v1",
+      "parent": "sql"
+    },
+    "azurite": {
+      "type": "azure.storage.v0"
+    },
+    "azure-blobs": {
+      "type": "azure.storage.blob.v0",
+      "parent": "azurite"
+    },
+    "azure-tables": {
+      "type": "azure.storage.table.v0",
+      "parent": "azurite"
+    },
+    "azure-queues": {
+      "type": "azure.storage.queue.v0",
+      "parent": "azurite"
+    },
+    "backend": {
+      "type": "project.v0",
+      "path": "../Aspire.WebApi/Aspire.WebApi.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "ConnectionStrings__testdb": "{testdb.connectionString}",
+        "ConnectionStrings__azure-blobs": "{azure-blobs.connectionString}",
+        "ConnectionStrings__azure-tables": "{azure-tables.connectionString}",
+        "ConnectionStrings__azure-queues": "{azure-queues.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "frontend": {
+      "type": "project.v0",
+      "path": "../Aspire.BlazorUI/Aspire.BlazorUI.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "ConnectionStrings__rediscache": "{rediscache.connectionString}",
+        "ConnectionStrings__azure-tables": "{azure-tables.connectionString}",
+        "services__backend__0": "{backend.bindings.http.url}",
+        "services__backend__1": "{backend.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    }
+  }
+}

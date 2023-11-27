@@ -68,8 +68,7 @@ else
                 PartitionKey = Guid.NewGuid().ToString(),
                 RowKey = string.Empty,
                 Message = "wow dude",
-            },
-            TableUpdateMode.Replace);
+            });
     }
 
     private class TestTable : ITableEntity

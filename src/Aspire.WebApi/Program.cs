@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddAzureTableService("tables");
+builder.AddAzureTableService("azure-tables");
 
 builder.AddSqlServerDbContext<TestDbContext>(
     connectionName: "testdb",
